@@ -1,19 +1,14 @@
 package org.benoit;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
+public class App {
+    static Leaf l = Leaf.get();
+    static Node nd = new Node("d", l, l);
+    static Node ne = new Node("e", l, l);
+    static Node nc = new Node("c",nd, ne);
+    static Node nb = new Node("b", l, l);
+    public static Node na = new Node("a", nb, nc);
+
     public static void main( String[] args ) {
-        System.out.println( "Hello World!" );
-        Leaf l = Leaf.get();
-        Node nd = new Node("d", l, l);
-        Node nb = new Node("b", nd, l);
-        Node ne = new Node("e", l, l);
-        Node nc = new Node("c", l, ne);
-        Node na = new Node("a", nb, nc);
 
         System.out.println(na);
         System.out.println(na.addId());
